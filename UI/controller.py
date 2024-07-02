@@ -69,7 +69,7 @@ class Controller:
             return
         path, n_citta_percorso, peso_tot = self._model._handle_percorso(int_n_citta)
         self._view.txt_result2.controls.clear()
-        self._view.txt_result2.controls.append(ft.Text(f"Trovato percorso che attraversa {n_citta_percorso} e pesante {peso_tot}:"))
+        self._view.txt_result2.controls.append(ft.Text(f"Trovato percorso che attraversa {n_citta_percorso} città e pesante {peso_tot}:"))
         for p in path:
             self._view.txt_result2.controls.append(ft.Text(f"{p[0]} --> {p[1]}, peso = {p[2]}"))
         self._view.update_page()
