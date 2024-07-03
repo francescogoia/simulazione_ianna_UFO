@@ -57,7 +57,7 @@ class DAO():
         conn = DBConnect.get_connection()
         cursor = conn.cursor(dictionary=True)
         query = """
-            select s1.city as c1, s2.city as c2, count(s1.shape) as peso
+            select s1.city as c1, s2.city as c2, count(distinct s1.id) + count(distinct s2.id) as peso
             from sighting s1, sighting s2
             where s1.state = %s and s1.state = s2.state
                 and s1.id != s2.id and s1.city != s2.city
